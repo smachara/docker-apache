@@ -12,4 +12,7 @@ rm -rf /var/lib/apt/lists/*
 # add apache2 service to supervisor
 ADD supervisor/conf.d/apache2.conf /etc/supervisor/conf.d/
 
-EXPOSE 80
+EXPOSE 80 443
+
+CMD ["apachectl", "-D", "FOREGROUND"]
+
